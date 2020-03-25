@@ -1,1 +1,1 @@
-# ts_test
+# typescript sample
