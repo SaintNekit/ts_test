@@ -28,15 +28,12 @@ const addPosts = (post: string) : string => {
 
 const getData = (url: string) => {
   fetch(url).then(response => response.json()).then(data => data.map(el => {
-    // console.log(`${getUser(el.username)} and ${getPosts(el.email)}`);
-    const users = new User(`${getUser(el.username)}`, [`${getPosts(el.email)}`]);
+    const name = getUser(el.username);
+    const post = getPosts(el.mail);
+    const users = new User(`${name}`, [`${post}`]);
     users.post.push(addPosts('A eto napisal ya'));
-    // User.name = el.username;
-    // User.posts = el.email;
     console.log(users)
   }));
 }
-// User.posts.push(addPosts('vsem zdarova'));
-// User.posts.push(addPosts('kak krasivo'));
-let a = getData('https://jsonplaceholder.typicode.com/users');
-// console.log(User)
+
+getData('https://jsonplaceholder.typicode.com/users');

@@ -30,7 +30,7 @@ interface nameBuilder {
     (name: string, surname: string, age?: any);
 }
 
-export const getFullName: nameBuilder = (name: string, surname: string, age: any) => {
+export const getFullName: nameBuilder = (name: string, surname: string, age?: number) => {
     return `Name: ${name}, Surname: ${surname}, age: ${age ? age : 'Unknown'}`
 }
 

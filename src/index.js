@@ -21,15 +21,11 @@ var addPosts = function (post) {
 };
 var getData = function (url) {
     cross_fetch_1["default"](url).then(function (response) { return response.json(); }).then(function (data) { return data.map(function (el) {
-        // console.log(`${getUser(el.username)} and ${getPosts(el.email)}`);
-        var users = new User("" + getUser(el.username), ["" + getPosts(el.email)]);
+        var name = getUser(el.username);
+        var post = getPosts(el.mail);
+        var users = new User("" + name, ["" + post]);
         users.post.push(addPosts('A eto napisal ya'));
-        // User.name = el.username;
-        // User.posts = el.email;
         console.log(users);
     }); });
 };
-// User.posts.push(addPosts('vsem zdarova'));
-// User.posts.push(addPosts('kak krasivo'));
-var a = getData('https://jsonplaceholder.typicode.com/users');
-// console.log(User)
+getData('https://jsonplaceholder.typicode.com/users');
